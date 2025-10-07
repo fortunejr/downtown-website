@@ -71,11 +71,29 @@ const CTA = () => {
 
           {/* Footer links */}
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 text-sm font-medium text-gray-300">
-            <div className="space-y-2">
-              <p>Instagram</p>
-              <p>Tiktok</p>
-              <p>X (Twitter)</p>
-            </div>
+            <div className="flex flex-col space-y-2">
+            <a
+              href="https://www.instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Instagram
+            </a>
+            <a
+              href="https://www.facebook.com/askdowntown"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Facebook
+            </a>
+            <a
+              href="https://x.com/askdoto"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              X (Twitter)
+            </a>
+          </div>
             <div className="leading-loose">
               <Link to="/privacy-policy"><p>Privacy Policy</p></Link>
               <Link to="/terms-of-use"><p>Terms of Use</p></Link>
