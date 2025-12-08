@@ -1,1 +1,24 @@
 @import "tailwindcss";
+
+body {
+  font-family: 'Codec', sans-serif;
+}
+
+.hero {
+  font-family: 'CodecHeavy', sans-serif;
+  font-weight: 900; /* optional if font only has 1 weight */
+}
+
+@font-face {
+  font-family: 'Codec';
+  src: url('./assets/fonts/Codec-Cold-Bold-trial.ttf') format('truetype');
+  font-weight: 700; /* bold */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'CodecHeavy';
+  src: url('./assets/fonts/Codec-Warm-Heavy-trial.ttf') format('truetype');
+  font-weight: 900; /* heavy/fat */
+  font-style: normal;
+}

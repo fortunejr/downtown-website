@@ -1,39 +1,89 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import paperbag from "../../assets/paperbag.png";
-import { bg } from "../../imports"; // background image import
-import "./Hero.css"; // optional custom CSS
+import React, { useEffect, useState } from "react";
+import { hero, heroimg } from "../../imports"; 
 
 const Herosection = () => {
+  const words = ["calories", "breakfast", "lunch", "dinner"];
+  const [text, setText] = useState("");
+  const [wordIndex, setWordIndex] = useState(0);
+  const [letterIndex, setLetterIndex] = useState(0);
+  const [deleting, setDeleting] = useState(false);
+
+  // ⏳ Typewriter Logic
+  useEffect(() => {
+    const currentWord = words[wordIndex];
+    let speed = deleting ? 60 : 100;
+
+    const timeout = setTimeout(() => {
+      if (!deleting) {
+        if (letterIndex < currentWord.length) {
+          setText(currentWord.substring(0, letterIndex + 1));
+          setLetterIndex(letterIndex + 1);
+        } else {
+          setTimeout(() => setDeleting(true), 800);
+        }
+      } else {
+        if (letterIndex > 0) {
+          setText(currentWord.substring(0, letterIndex - 1));
+          setLetterIndex(letterIndex - 1);
+        } else {
+          setDeleting(false);
+          setWordIndex((prev) => (prev + 1) % words.length);
+        }
+      }
+    }, speed);
+
+    return () => clearTimeout(timeout);
+  }, [letterIndex, deleting, wordIndex]);
+
   return (
-    <section
-      className="
-        flex flex-col items-center justify-center text-center 
-        bg-cover bg-center bg-no-repeat 
-        px-6 md:px-12 
-        h-[80vh] sm:h-[85vh] md:h-[100vh]  /* 👈 Increased height */
-      "
-      style={{ backgroundImage: `url(${bg})` }}
-    >
-      {/* Paper bag image */}
-      <img
-        src={paperbag}
-        alt="paper bag"
-        className="w-28 sm:w-36 md:w-44 lg:w-56 mb-6 animate-fade-in"
-      />
+    <section className="flex flex-col items-center pt-10 pb-4 text-center w-full overflow-hidden tracking-tight">
 
-      {/* Heading text */}
-      <h1 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-extrabold text-black mb-6 leading-snug drop-shadow-sm">
-        We’re Launching Soon on <br className="hidden sm:block" /> your campus!
-      </h1>
+      {/* --------- TITLE TEXT --------- */}
+      <div className="w-[95%] mb-4 md:w-[45%]">
+        <img
+          src={hero}
+          alt="Turn chat to"
+          className="w-full h-auto object-contain"
+        />
+      </div>
 
-      {/* Join button */}
-      <Link
-        to="/"
-        className="bg-orange-600 hover:bg-orange-500 text-white text-base sm:text-lg font-semibold px-8 sm:px-10 md:px-12 py-3 sm:py-4 rounded-full shadow-[0_4px_15px_rgba(255,165,0,0.5)] transition transform hover:scale-105"
-      >
-        Join waitlist
-      </Link>
+      {/* --------- TYPEWRITER TEXT --------- */}
+      <div className="w-[95%] mb-6 md:w-[45%]" style={{ minHeight: "80px" }}>
+        <h1
+          className="font-bold text-[#FC4C01] leading-none"
+          style={{ fontSize: "clamp(4.0rem, 15vw, 7rem)" }}
+        >
+          {text}
+          <span className="animate-pulse">|</span>
+        </h1>
+      </div>
+
+      {/* --------- HERO IMAGE --------- */}
+      <div className="w-[95%] mb-4 md:w-[45%]">
+        <img
+          src={heroimg}
+          alt="hero preview"
+          className="w-full h-auto object-contain"
+        />
+      </div>
+
+      {/* --------- SCROLLING TEXT --------- */}
+      <div className="relative w-[100%] overflow-hidden">
+        <style>{`
+          @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+          }
+          .animate-marquee {
+            animation: marquee 15s linear infinite;
+            display: inline-block;
+          }
+        `}</style>
+
+        <p className="whitespace-nowrap text-gray-500 text-xl animate-marquee">
+          order in seconds, on Simple, fast and reliable. order in seconds, on Simple, fast and reliable. order in seconds, on Simple, fast and reliable.
+        </p>
+      </div>
     </section>
   );
 };
