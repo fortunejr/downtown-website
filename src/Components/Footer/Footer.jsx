@@ -4,7 +4,7 @@ import { logo } from "../../imports";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#0D0D0D] text-white pt-32 pb-10 px-6 md:px-16 relative -mt-8">
+    <footer className="bg-[#0D0D0D] font-montserrat text-white pt-32 pb-10 px-6 md:px-16 relative -mt-8">
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 gap-10">
         {/* Logo */}
         <img src={logo} alt="Logo" className="w-40 sm:w-48 mb-4 md:mb-0" />
@@ -59,7 +59,7 @@ const Footer = () => {
       </div>
 
       {/* Copyright */}
-      <div className="text-center text-xs text-gray-400 border-t border-gray-800 pt-6">
+      <div className="text-center font-montserrat text-xs text-gray-400 border-t border-gray-800 pt-6">
         © 2025 HeyChat International Limited. All rights reserved.
       </div>
     </footer>

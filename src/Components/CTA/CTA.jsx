@@ -24,10 +24,10 @@ const WhatsAppOrderSection = () => {
           href={whatsappLink}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 bg-[#FF5722] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#F4511E] transition-colors shadow-md mb-8"
+          className="inline-flex font-montserrat items-center gap-2 bg-[#FF5722] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#F4511E] transition-colors shadow-md mb-8"
         >
-          <MessageCircle size={20} />
           Chat Downtown
+          <MessageCircle size={20} />
         </a>
 
         {/* FAQ/Phone Image - Large */}

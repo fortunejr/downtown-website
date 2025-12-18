@@ -7,8 +7,7 @@ const Nav = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav className="relative flex justify-between items-center w-full px-4 md:px-10 py-4">
-      
+    <nav className="relative font-montserrat flex justify-between items-center w-full px-4 md:px-10 py-4">
       {/* LEFT — Logo (Bigger on Mobile, Aligned Left) */}
       <Link to="/" className="flex items-center">
         <img
@@ -28,9 +27,15 @@ const Nav = () => {
 
       {/* DESKTOP LINKS */}
       <div className="hidden md:flex items-center space-x-8 text-orange-600 font-semibold text-sm">
-        <Link to="#merchants" className="hover:text-orange-700">FOR MERCHANT/VENDORS</Link>
-        <Link to="#how-it-works" className="hover:text-orange-700">HOW IT WORKS</Link>
-        <Link to="#contact" className="hover:text-orange-700">CONTACT US</Link>
+        <Link to="#merchants" className="hover:text-orange-700">
+          FOR MERCHANT/VENDORS
+        </Link>
+        <Link to="#how-it-works" className="hover:text-orange-700">
+          HOW IT WORKS
+        </Link>
+        <Link to="#contact" className="hover:text-orange-700">
+          CONTACT US
+        </Link>
         <Link
           to="#get-started"
           className="bg-orange-500 text-white px-5 py-2 rounded-full hover:bg-orange-600 shadow-[0_0_15px_rgba(255,165,0,0.4)]"
@@ -42,9 +47,15 @@ const Nav = () => {
       {/* MOBILE MENU DROPDOWN */}
       {menuOpen && (
         <div className="absolute top-full left-0 w-full bg-white shadow-lg py-6 flex flex-col items-center space-y-5 text-orange-600 font-semibold text-sm z-50">
-          <Link to="#merchants" onClick={() => setMenuOpen(false)}>FOR MERCHANT/VENDORS</Link>
-          <Link to="#how-it-works" onClick={() => setMenuOpen(false)}>HOW IT WORKS</Link>
-          <Link to="#contact" onClick={() => setMenuOpen(false)}>CONTACT US</Link>
+          <Link to="#merchants" onClick={() => setMenuOpen(false)}>
+            FOR MERCHANT/VENDORS
+          </Link>
+          <Link to="#how-it-works" onClick={() => setMenuOpen(false)}>
+            HOW IT WORKS
+          </Link>
+          <Link to="#contact" onClick={() => setMenuOpen(false)}>
+            CONTACT US
+          </Link>
           <Link
             to="#get-started"
             className="bg-orange-500 text-white px-6 py-2 rounded-full shadow-[0_0_15px_rgba(255,165,0,0.4)] hover:bg-orange-600"

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { hero, heroimg } from "../../imports"; 
+import { hero, heroimg } from "../../imports";
 
 const Herosection = () => {
   const words = ["calories", "breakfast", "lunch", "dinner"];
@@ -37,21 +37,23 @@ const Herosection = () => {
 
   return (
     <section className="flex flex-col items-center pt-10 pb-4 text-center w-full overflow-hidden tracking-tight">
-
       {/* --------- TITLE TEXT --------- */}
-      <div className="w-[95%] mb-4 md:w-[45%]">
-        <img
-          src={hero}
-          alt="Turn chat to"
-          className="w-full h-auto object-contain"
-        />
+      <div className="w-[95%] mb-4 md:w-[45%] font-codec-heavy">
+        <h1
+          className="leading-[0.84]"
+          style={{ fontSize: "clamp(4.0rem, 15vw, 8rem)" }}
+        >
+          Turn
+          <span className="text-[#B2B2B2] block">chat</span>
+          <span>to</span>
+        </h1>
       </div>
 
       {/* --------- TYPEWRITER TEXT --------- */}
       <div className="w-[95%] mb-6 md:w-[45%]" style={{ minHeight: "80px" }}>
         <h1
-          className="font-bold text-[#FC4C01] leading-none"
-          style={{ fontSize: "clamp(4.0rem, 15vw, 7rem)" }}
+          className="font-codec-heavy text-[#FC4C01] leading-none"
+          style={{ fontSize: "clamp(4.0rem, 15vw, 8rem)" }}
         >
           {text}
           <span className="animate-pulse">|</span>
@@ -80,8 +82,10 @@ const Herosection = () => {
           }
         `}</style>
 
-        <p className="whitespace-nowrap text-gray-500 text-xl animate-marquee">
-          order in seconds, on Simple, fast and reliable. order in seconds, on Simple, fast and reliable. order in seconds, on Simple, fast and reliable.
+        <p className="whitespace-nowrap text-gray-500 text-2xl font-codec-thin animate-marquee">
+          order in seconds, on Simple, fast and reliable. order in seconds, on
+          Simple, fast and reliable. order in seconds, on Simple, fast and
+          reliable.
         </p>
       </div>
     </section>

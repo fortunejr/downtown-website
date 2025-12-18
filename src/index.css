@@ -1,24 +1,38 @@
+@import url("https://fonts.googleapis.com/css2?family=Belgrano&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Zalando+Sans+Expanded:ital,wght@0,200..900;1,200..900&display=swap");
 @import "tailwindcss";
 
 body {
-  font-family: 'Codec', sans-serif;
+  font-family: "Codec", sans-serif;
 }
 
 .hero {
-  font-family: 'CodecHeavy', sans-serif;
+  font-family: "CodecHeavy", sans-serif;
   font-weight: 900; /* optional if font only has 1 weight */
 }
 
 @font-face {
-  font-family: 'Codec';
-  src: url('./assets/fonts/Codec-Cold-Bold-trial.ttf') format('truetype');
+  font-family: "Codec";
+  src: url("./assets/fonts/Codec-Cold-Bold-trial.ttf") format("truetype");
   font-weight: 700; /* bold */
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'CodecHeavy';
-  src: url('./assets/fonts/Codec-Warm-Heavy-trial.ttf') format('truetype');
+  font-family: "CodecHeavy";
+  src: url("./assets/fonts/CodecPro-Fat.ttf") format("truetype");
   font-weight: 900; /* heavy/fat */
   font-style: normal;
+}
+
+@font-face {
+  font-family: "CodecThin";
+  src: url("./assets/fonts/CodecPro-Light.ttf") format("truetype");
+  font-weight: 100; /* thin */
+  font-style: normal;
+}
+
+@theme {
+  --font-codec-heavy: "CodecHeavy", sans-serif;
+  --font-codec-thin: "CodecThin", sans-serif;
+  --font-montserrat: "Montserrat", serif;
 }
