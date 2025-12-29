@@ -1,66 +1,88 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { logo } from "../../imports";
+import { Instagram, Twitter } from "lucide-react";
+import { downtowntxtjpg } from "../../imports";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#0D0D0D] font-montserrat text-white pt-32 pb-10 px-6 md:px-16 relative -mt-8">
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 gap-10">
-        {/* Logo */}
-        <img src={logo} alt="Logo" className="w-40 sm:w-48 mb-4 md:mb-0" />
+    <footer className="bg-[#0D0D0D] font-montserrat text-white pt-20 pb-0 relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 md:px-16 relative z-10 flex flex-col md:items-center">
+        {/* MOBILE LAYOUT (< md) */}
+        <div className="md:hidden w-full mb-12">
+          <div className="grid grid-cols-2 gap-y-10 text-base font-medium text-gray-200">
+            {/* Left Column */}
+            <div className="space-y-6">
+              <Link to="/privacy-policy" className="block hover:text-white">
+                Privacy policy
+              </Link>
+              <Link to="/terms-of-use" className="block hover:text-white">
+                Terms of use
+              </Link>
+            </div>
+            {/* Right Column */}
+            <div className="space-y-6">
+              <Link to="" className="block hover:text-white">
+                Downtown for vendors
+              </Link>
+              <Link to="/about-company" className="block hover:text-white">
+                About company
+              </Link>
+            </div>
+          </div>
+        </div>
 
-        {/* Footer links */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 text-sm font-medium text-gray-300">
-          <div className="flex flex-col space-y-2">
-            <a
-              href="https://www.instagram.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Instagram
-            </a>
-            <a
-              href="https://www.facebook.com/askdowntown"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Facebook
-            </a>
-            <a
-              href="https://x.com/askdoto"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              X (Twitter)
-            </a>
-          </div>
+        {/* DESKTOP LAYOUT (>= md) */}
+        <div className="hidden md:flex flex-row space-x-12 text-lg font-medium text-gray-200 mb-12">
+          <Link to="" className="hover:text-white">
+            Downtown for vendors
+          </Link>
+          <Link to="/terms-of-use" className="hover:text-white">
+            Terms of use
+          </Link>
+          <Link to="/privacy-policy" className="hover:text-white">
+            Privacy policy
+          </Link>
+          <Link to="/about-company" className="hover:text-white">
+            About company
+          </Link>
+        </div>
 
-          <div className="leading-loose">
-            <Link to="/privacy-policy">
-              <p>Privacy Policy</p>
-            </Link>
-            <Link to="/terms-of-use">
-              <p>Terms of Use</p>
-            </Link>
-            <Link to="/about-company">
-              <p>About Company</p>
-            </Link>
-          </div>
-          <div className="space-y-2">
-            <p>For Merchants</p>
-            <p>For Deliverers</p>
-            <p>Support</p>
-          </div>
-          <div className="space-y-2">
-            <p>Contact Us</p>
-            <p>Hey AI</p>
-          </div>
+        {/* Social Icons */}
+        <div className="flex space-x-6 mb-8 text-gray-400 w-full md:w-auto md:justify-center">
+          <a
+            href="https://www.instagram.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-white"
+          >
+            <Instagram size={24} />
+          </a>
+          <a
+            href="https://twitter.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-white"
+          >
+            <Twitter size={24} />
+          </a>
+        </div>
+
+        {/* Divider */}
+        <div className="border-t border-gray-800 mb-6 w-full"></div>
+
+        {/* Copyright */}
+        <div className="text-left md:text-center text-xs text-gray-400 mb-20 md:mb-40 w-full">
+          © 2025 Heychat International Limited. All rights reserved.
         </div>
       </div>
 
-      {/* Copyright */}
-      <div className="text-center font-montserrat text-xs text-gray-400 border-t border-gray-800 pt-6">
-        © 2025 HeyChat International Limited. All rights reserved.
+      {/* Large Background Text Image */}
+      <div className="absolute bottom-0 left-0 w-full pointer-events-none">
+        <img
+          src={downtowntxtjpg}
+          alt="Downtown"
+          className="w-full h-auto lg:h-[240px] object-cover opacity-80"
+        />
       </div>
     </footer>
   );

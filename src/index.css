@@ -1,8 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Belgrano&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Zalando+Sans+Expanded:ital,wght@0,200..900;1,200..900&display=swap");
 @import "tailwindcss";
 
+html {
+  scroll-behavior: smooth;
+}
+/* 
+html {
+  scroll-behavior: smooth;
+} */
+
 body {
-  font-family: "Codec", sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 .hero {
@@ -18,9 +26,23 @@ body {
 }
 
 @font-face {
+  font-family: "CodecRegular";
+  src: url("./assets/fonts/CodecPro-Regular.ttf") format("truetype");
+  font-weight: 400; /* bold */
+  font-style: normal;
+}
+
+@font-face {
   font-family: "CodecHeavy";
   src: url("./assets/fonts/CodecPro-Fat.ttf") format("truetype");
   font-weight: 900; /* heavy/fat */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "CodecBold";
+  src: url("./assets/fonts/CodecPro-Heavy.ttf") format("truetype");
+  font-weight: 800; /* bold/heavy */
   font-style: normal;
 }
 
@@ -33,6 +55,9 @@ body {
 
 @theme {
   --font-codec-heavy: "CodecHeavy", sans-serif;
+  --font-codec-bold: "CodecBold", sans-serif;
+  --font-codec: "Codec", sans-serif;
   --font-codec-thin: "CodecThin", sans-serif;
   --font-montserrat: "Montserrat", serif;
+  --font-codec-regular: "CodecRegular", sans-serif;
 }
