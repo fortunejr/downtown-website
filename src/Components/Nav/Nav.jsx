@@ -59,9 +59,9 @@ const Nav = () => {
 
       {/* MOBILE MENU DROPDOWN */}
       {menuOpen && (
-        <div className="fixed inset-0 bg-white/70 backdrop-blur-md z-50 flex flex-col p-6 animate-in fade-in duration-300 md:hidden">
+        <div className="fixed inset-0 bg-white/70 backdrop-blur-md z-50 flex flex-col px-4 animate-in fade-in duration-300 md:hidden">
           {/* Header section with Logo and Close button */}
-          <div className="flex justify-between items-center mb-6">
+          <div className="flex justify-between items-center py-6 my-6">
             <img
               src={logo2}
               alt="logo"

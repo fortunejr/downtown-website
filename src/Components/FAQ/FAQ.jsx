@@ -19,7 +19,7 @@ const FAQ = () => {
     {
       question: "How do i use downtown?",
       answer:
-        "Our delivery time typically ranges from 30-45 minutes depending on your location and restaurant preparation time. We strive to deliver your food as quickly as possible.",
+        " Just click on the GET STARTED button and follow the instructions.",
     },
     {
       question: "how long does an order take?",
