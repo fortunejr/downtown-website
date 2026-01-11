@@ -21,16 +21,16 @@ const Nav = () => {
   const whatsappNumber = "2349023168568";
   const whatsappLink = `https://wa.me/${whatsappNumber}`;
 
-  const handleRequestOtp = async () => {
+  const handleRequestOtp = async (email) => {
     try {
-      const response = await requestClosureOtp(email, "John Doe");
+      const response = await requestClosureOtp(email);
       console.log(response);
     } catch (error) {
       console.error("Error requesting OTP:", error);
     }
   };
 
-  const handleVerifyOtp = async () => {
+  const handleVerifyOtp = async (otp) => {
     try {
       const response = await verifyClosureOtp(otp);
       console.log(response);
@@ -179,7 +179,7 @@ const Nav = () => {
                   <button
                     onClick={() => {
                       setClosureStep(2);
-                      requestClosureOtp(email, "User");
+                      handleRequestOtp(email);
                     }}
                     className="w-full bg-black text-white py-4 rounded-[8px] font-medium text-lg"
                   >

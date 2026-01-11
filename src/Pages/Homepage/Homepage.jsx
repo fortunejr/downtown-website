@@ -33,6 +33,7 @@ const Homepage = () => {
           name="description"
           content="Order delicious meals via WhatsApp from Downtown food court. Fast delivery to Bells University."
         />
+        <script type="application/ld+json">{JSON.stringify(schemaData)}</script>
         <link rel="canonical" href="https://downtown.ng/" />
       </Helmet>
       <div>

@@ -7,9 +7,9 @@
 
 const BASE_URL = "https://api.downtown.ng"; // TODO: Replace with your actual API base URL
 
-export const requestClosureOtp = async (email, name) => {
+export const requestClosureOtp = async (email) => {
   try {
-    const response = await fetch(`${BASE_URL}/auth/send-otp/2347047994999`, {
+    const response = await fetch(`${BASE_URL}/auth/send-delete-account-otp`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -17,7 +17,6 @@ export const requestClosureOtp = async (email, name) => {
       body: JSON.stringify({
         email: email,
         recipient_type: "user",
-        name: name,
       }),
     });
 
@@ -64,32 +63,3 @@ export const verifyClosureOtp = async (otp) => {
     throw error;
   }
 };
-
-/**
- * Optional: Resend OTP if user didn't receive it
- *
- * @param {string} email - The user's registered email address
- * @returns {Promise<Object>} - Response containing success status and message
- */
-// export const resendClosureOtp = async (email) => {
-//   try {
-//     const response = await fetch(`${BASE_URL}/users/delete/resend-otp`, {
-//       method: "POST",
-//       headers: {
-//         "Content-Type": "application/json",
-//       },
-//       body: JSON.stringify({ email }),
-//     });
-
-//     const data = await response.json();
-
-//     if (!response.ok) {
-//       throw new Error(data.message || "Failed to resend OTP");
-//     }
-
-//     return data;
-//   } catch (error) {
-//     console.error("Error resending closure OTP:", error);
-//     throw error;
-//   }
-// };
