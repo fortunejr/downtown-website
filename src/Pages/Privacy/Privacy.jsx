@@ -1,6 +1,7 @@
 import React from "react";
 import Nav from "../../Components/Nav/Nav";
 import Footer from "../../Components/Footer/Footer";
+import { Helmet } from "react-helmet-async";
 
 const Privacy = () => {
   return (
@@ -151,7 +152,11 @@ const Privacy = () => {
           </h2>
           <p className="text-base md:text-lg text-gray-700 mb-2">
             Email:{" "}
-            <a href="mailto:askheychat@downtown.ng">askheychat@downtown.ng</a>
+            <a href="mailto:heychat@downtown.ng">heychat@downtown.ng</a>
+          </p>
+          <p className="text-base md:text-lg text-gray-700 mb-2">
+            Phone:{" "}
+            <a href="tel:+2349023168568">+234 902 316 8568</a>
           </p>
           <p className="text-base md:text-lg text-gray-700">
             Website:{" "}

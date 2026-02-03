@@ -2,6 +2,7 @@ import React from "react";
 import Footer from "../../Components/Footer/Footer";
 import Nav from "../../Components/Nav/Nav";
 import { bells } from "../../imports";
+import { Helmet } from "react-helmet-async";
 
 const About = () => {
   return (
