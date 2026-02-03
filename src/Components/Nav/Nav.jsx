@@ -3,11 +3,16 @@ import { Link } from "react-router-dom";
 import { Menu, X, ChevronLeft } from "lucide-react";
 import { logo2 } from "../../imports";
 import { whatsappIcon } from "../../imports";
+import {
+  requestClosureOtp,
+  verifyClosureOtp,
+} from "../../services/accountClosureApi";
 
 const Nav = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [closureStep, setClosureStep] = useState(0); // 0: Menu, 1: Email, 2: OTP
   const [email, setEmail] = useState("");
+  const [otp, setOtp] = useState("");
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -15,6 +20,24 @@ const Nav = () => {
   };
   const whatsappNumber = "2349023168568";
   const whatsappLink = `https://wa.me/${whatsappNumber}`;
+
+  const handleRequestOtp = async (email) => {
+    try {
+      const response = await requestClosureOtp(email);
+      console.log(response);
+    } catch (error) {
+      console.error("Error requesting OTP:", error);
+    }
+  };
+
+  const handleVerifyOtp = async (otp) => {
+    try {
+      const response = await verifyClosureOtp(otp);
+      console.log(response);
+    } catch (error) {
+      console.error("Error verifying OTP:", error);
+    }
+  };
 
   return (
     <nav className="relative font-montserrat flex justify-between items-center w-full px-4 md:px-10 py-12">
@@ -154,7 +177,10 @@ const Nav = () => {
                   />
 
                   <button
-                    onClick={() => setClosureStep(2)}
+                    onClick={() => {
+                      setClosureStep(2);
+                      handleRequestOtp(email);
+                    }}
                     className="w-full bg-black text-white py-4 rounded-[8px] font-medium text-lg"
                   >
                     Continue
@@ -168,12 +194,15 @@ const Nav = () => {
                   <input
                     type="text"
                     placeholder="Enter OTP"
+                    value={otp}
+                    onChange={(e) => setOtp(e.target.value)}
                     className="w-full bg-transparent border border-#000000A6 rounded-md p-4 mb-6 focus:outline-none focus:border-orange-500 placeholder:text-gray-500"
                   />
 
                   <button
                     onClick={() => {
                       alert("Account closure request sent!");
+                      handleVerifyOtp(otp);
                       toggleMenu();
                     }}
                     className="w-full bg-black text-white py-4 rounded-[8px] font-medium text-lg"
